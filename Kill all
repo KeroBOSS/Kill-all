@@ -1,0 +1,25 @@
+--Kill Everyone In The Server Except For You Except This Time, They Will Never Stop Dieing >:D--
+ 
+--Loops the script over and over and over again--
+while true do
+ 
+--Basically getting the person's name that is using the script--
+local me = game.Players.LocalPlayer
+ 
+--Picks a random number from 3 to 5--
+local randomwait = math.random(3, 5)
+ 
+--Waiting for as long as the number that was chosen--
+wait(randomwait)
+ 
+--Getting everything in the workspace--
+for i, v in pairs(game.Workspace:GetChildren()) do
+ 
+--Checking if the chosen object is a character by looking for a Humanoid and making sure the player isn't you by checking the name--
+    if v:FindFirstChild("Humanoid") and v.Name ~= me.Name then
+ 
+--Changing the humanoid health to 0 which is the equivalent of killing a player--
+        v:WaitForChild("Humanoid").Health = 0
+    end
+  end
+end
